@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="152" id="KGk-i7-Jjw" customClass="TwoButtonTableViewCell" customModule="Kitchen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="321" height="152"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="321" height="151.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qcT-ir-32m">
+                        <rect key="frame" x="0.0" y="0.0" width="151.5" height="151.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="qcT-ir-32m" secondAttribute="height" multiplier="1:1" id="S3o-pK-3Fg"/>
+                        </constraints>
+                        <connections>
+                            <action selector="liftClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Od6-ba-z6H"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tkd-PU-gVg" userLabel="r">
+                        <rect key="frame" x="151.5" y="0.0" width="169.5" height="151.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="rightClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="m7C-mh-L33"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qcT-ir-32m" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="1Tk-rF-t6j"/>
+                    <constraint firstItem="Tkd-PU-gVg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="4D0-sR-rF9"/>
+                    <constraint firstItem="Tkd-PU-gVg" firstAttribute="leading" secondItem="qcT-ir-32m" secondAttribute="trailing" id="B8F-xf-JqQ"/>
+                    <constraint firstItem="qcT-ir-32m" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="GxH-cc-GR0"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Tkd-PU-gVg" secondAttribute="bottom" constant="-8" id="aKN-RC-1cG"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Tkd-PU-gVg" secondAttribute="trailing" constant="-8" id="peu-la-wKx"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qcT-ir-32m" secondAttribute="bottom" constant="-8" id="szz-Fv-PjE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="lButton" destination="qcT-ir-32m" id="HJr-5l-Jum"/>
+                <outlet property="rButton" destination="Tkd-PU-gVg" id="cal-ta-p4z"/>
+            </connections>
+            <point key="canvasLocation" x="258.5" y="174"/>
+        </tableViewCell>
+    </objects>
+</document>

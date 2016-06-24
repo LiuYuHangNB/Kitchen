@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="385" id="KGk-i7-Jjw" customClass="FourButtonTableViewCell" customModule="Kitchen" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="337" height="385"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="337" height="384.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlm-aw-CM3" userLabel="lt">
+                        <rect key="frame" x="0.0" y="0.0" width="168" height="220.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="ltClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wuh-VI-DG7"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eV0-6p-wV0" userLabel="rt">
+                        <rect key="frame" x="168" y="0.0" width="168.5" height="164"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="eV0-6p-wV0" secondAttribute="height" multiplier="151:147" id="BLl-QZ-Sh4"/>
+                        </constraints>
+                        <connections>
+                            <action selector="rtClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6UT-Kh-aqB"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UnW-9c-eXg" userLabel="rd">
+                        <rect key="frame" x="168.5" y="164" width="168.5" height="220.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="rdClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Tt9-Pe-8Eo"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ai8-Je-fOR" userLabel="ld">
+                        <rect key="frame" x="0.0" y="220" width="168.5" height="164"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="ldClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sxV-pk-Whp"/>
+                        </connections>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYk-Fc-QhU">
+                        <rect key="frame" x="168" y="8" width="0.0" height="368.5"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" id="TeP-dL-VMC"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ai8-Je-fOR" firstAttribute="top" secondItem="wlm-aw-CM3" secondAttribute="bottom" id="91O-TV-1gI"/>
+                    <constraint firstItem="wlm-aw-CM3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="BtO-mt-0aE"/>
+                    <constraint firstItem="eV0-6p-wV0" firstAttribute="leading" secondItem="wlm-aw-CM3" secondAttribute="trailing" id="LhK-VX-RID"/>
+                    <constraint firstItem="eV0-6p-wV0" firstAttribute="leading" secondItem="eYk-Fc-QhU" secondAttribute="trailing" id="N2L-LF-s8k"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Ai8-Je-fOR" secondAttribute="bottom" constant="-8" id="OGC-jX-W0N"/>
+                    <constraint firstItem="wlm-aw-CM3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="S13-gG-E3n"/>
+                    <constraint firstItem="eYk-Fc-QhU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="XJi-wW-gSY"/>
+                    <constraint firstItem="UnW-9c-eXg" firstAttribute="leading" secondItem="Ai8-Je-fOR" secondAttribute="trailing" id="Y3P-45-kh6"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="UnW-9c-eXg" secondAttribute="bottom" constant="-8" id="YN3-Ho-fFJ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eYk-Fc-QhU" secondAttribute="bottom" id="Z3l-9I-WD7"/>
+                    <constraint firstItem="eYk-Fc-QhU" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="gA7-01-kfd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="UnW-9c-eXg" secondAttribute="trailing" constant="-8" id="iVM-Vg-ahJ"/>
+                    <constraint firstItem="Ai8-Je-fOR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="lH1-gx-KhM"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eV0-6p-wV0" secondAttribute="trailing" constant="-8" id="p02-ar-rWD"/>
+                    <constraint firstItem="eV0-6p-wV0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="tiI-WZ-TB8"/>
+                    <constraint firstItem="UnW-9c-eXg" firstAttribute="top" secondItem="eV0-6p-wV0" secondAttribute="bottom" id="uWH-oa-Csf"/>
+                    <constraint firstItem="Ai8-Je-fOR" firstAttribute="width" secondItem="eV0-6p-wV0" secondAttribute="width" id="yB8-t3-vwe"/>
+                    <constraint firstItem="Ai8-Je-fOR" firstAttribute="height" secondItem="eV0-6p-wV0" secondAttribute="height" id="zb3-s0-bdt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="ldButton" destination="Ai8-Je-fOR" id="EVf-bd-nzF"/>
+                <outlet property="ltButton" destination="wlm-aw-CM3" id="sfT-4k-7Yq"/>
+                <outlet property="rdButton" destination="UnW-9c-eXg" id="cce-TZ-EAI"/>
+                <outlet property="rtButton" destination="eV0-6p-wV0" id="9c2-g8-6J3"/>
+            </connections>
+            <point key="canvasLocation" x="260.5" y="246.5"/>
+        </tableViewCell>
+    </objects>
+</document>
