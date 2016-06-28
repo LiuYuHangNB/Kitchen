@@ -9,9 +9,11 @@
 
 import UIKit
 typealias OnePicClosure = (content_id: String)->Void
+typealias SDCClosure = (slide_id: String,content_type: String)->Void
 
 class HomeCollectionViewCell: UICollectionViewCell,SDCycleScrollViewDelegate,UITableViewDelegate,UITableViewDataSource {
     
+    var MySDCClosure: SDCClosure?
     var SDCArray: NSMutableArray!
     var SDCView: SDCycleScrollView!
     var tableView: UITableView!
@@ -19,9 +21,22 @@ class HomeCollectionViewCell: UICollectionViewCell,SDCycleScrollViewDelegate,UIT
     var myClosure: OnePicClosure?
     var content_id: String?
     var toppic_url: String?
+    var idArray: NSMutableArray!
+    var typeArray: NSMutableArray!
+    func initSDCClosure(closure: SDCClosure) {
+        
+        self.MySDCClosure = closure
+    }
+    
+    func initMyClosure(closure: OnePicClosure) {
+        
+        self.myClosure = closure
+    }
     override init(frame: CGRect) {
         
         super.init(frame: frame)
+        self.idArray = NSMutableArray()
+        self.typeArray = NSMutableArray()
         self.initSDCData()
 
     }
@@ -46,6 +61,9 @@ class HomeCollectionViewCell: UICollectionViewCell,SDCycleScrollViewDelegate,UIT
                 for dic in array {
                     
                     self.SDCArray.addObject(dic["pic_url"]as! String)
+                    
+                    self.idArray.addObject(dic["content_id"]as! String)
+                    self.typeArray.addObject(dic["topic_url"]as! String)
                 }
                 
                 var dict = NSDictionary()
@@ -53,6 +71,7 @@ class HomeCollectionViewCell: UICollectionViewCell,SDCycleScrollViewDelegate,UIT
                 self.content_id = (((dict.objectForKey("list") as! NSArray).objectAtIndex(1) as! NSDictionary).objectForKey("one") as! NSDictionary).objectForKey("content_id") as? String
                 
                 self.toppic_url = (((dict.objectForKey("list") as! NSArray).objectAtIndex(1) as! NSDictionary).objectForKey("one") as! NSDictionary).objectForKey("toppic_url") as? String
+                
                 
                     let model = HomeModel()
                     model.setValuesForKeysWithDictionary(dict as! [String : AnyObject])
@@ -70,7 +89,11 @@ class HomeCollectionViewCell: UICollectionViewCell,SDCycleScrollViewDelegate,UIT
     }
     func cycleScrollView(cycleScrollView: SDCycleScrollView!, didSelectItemAtIndex index: Int) {
         
-        print(index)
+        if MySDCClosure != nil {
+            
+            self.MySDCClosure!(slide_id: self.idArray[index] as! String, content_type: (self.typeArray[index] as! String))
+        }
+        
     }
 
     

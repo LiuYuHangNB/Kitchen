@@ -141,32 +141,44 @@ class KindCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITableVi
         
         head.initWithClosure { (isBool) -> Void? in
             
-            if section != 0 {
-                if isBool == false {
+            if isBool == true {
+            var offset: CGPoint = tableView.contentOffset
+            print(offset.y)
+            let offsetY = head.frame.origin.y - offset.y
+            print(offsetY)
+            print(head.frame.origin.y)
+            if offsetY > 0 && offsetY <= head.frame.origin.y {
+                
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
                     
-            
+                    offset.y += offsetY
+                    tableView.contentOffset = offset
+                })
+                
+            }else if offsetY < 0 {
+                
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
                     
-                }else if isBool == true {
-                    
-//                   tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), atScrollPosition: UITableViewScrollPosition.None, animated: true)
-                  
+                    offset.y = offset.y + offsetY
+                    tableView.contentOffset = offset
+                })
+                
+                
                 }
-            }
-            
+                
+                
+        }
             tableView.reloadSections(NSIndexSet(index: section), withRowAnimation: UITableViewRowAnimation.Fade)
             
             return nil
             
         }
        
-//        print(self.kindModelArray)
         return head
         
     }
     
-    func postMessage(string:Bool) ->Void {
-        
-    }
+    
     
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

@@ -15,6 +15,7 @@ class WebViewController: UIViewController {
     var webbView: WKWebView?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "粮仓商店"
     print("/","/","传过来的Url",(urlStr))
 
         self.webbView = WKWebView.init(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height))

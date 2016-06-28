@@ -35,22 +35,19 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func ltClick(noti: NSNotification) {
         
         let webVC = WebViewController()
+        webVC.hidesBottomBarWhenPushed = true
         webVC.urlStr = noti.userInfo!["topic_url"] as? String
         
         let shopVC = ShopViewController()
+        shopVC.hidesBottomBarWhenPushed = true
+        shopVC.urlStr = noti.userInfo!["content_id"] as? String
         
-        let url = "http://mobile.iliangcang.com/goods/goodsList?a=b&list_id=$&count=10&page=1&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
-        shopVC.urlStr = url.stringByReplacingOccurrencesOfString("$", withString: (noti.userInfo!["content_id"] as? String)!)
-        
-        print(noti.userInfo)
         if (noti.userInfo!["topic_url"]?.length != 0) {
             
-            print("fei")
         self.navigationController?.pushViewController(webVC, animated: true)
             
         }else {
             
-            print("kong")
         self.navigationController?.pushViewController(shopVC, animated: true)
             
         }
@@ -60,21 +57,19 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func rtClick(noti: NSNotification) {
         
         let webVC = WebViewController()
+        webVC.hidesBottomBarWhenPushed = true
         webVC.urlStr = noti.userInfo!["topic_url"] as? String
         
         let shopVC = ShopViewController()
-        let url = "http://mobile.iliangcang.com/goods/goodsList?a=b&list_id=$&count=10&page=1&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
-        shopVC.urlStr = url.stringByReplacingOccurrencesOfString("$", withString: (noti.userInfo!["content_id"] as? String)!)
-        
-        print(noti.userInfo)
+        shopVC.hidesBottomBarWhenPushed = true
+        shopVC.urlStr = noti.userInfo!["content_id"] as? String
+
         if (noti.userInfo!["topic_url"]?.length != 0) {
             
-            print("fei")
             self.navigationController?.pushViewController(webVC, animated: true)
             
         }else {
             
-            print("kong")
             self.navigationController?.pushViewController(shopVC, animated: true)
             
         }
@@ -83,22 +78,19 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func rdClick(noti: NSNotification) {
         
         let webVC = WebViewController()
+        webVC.hidesBottomBarWhenPushed = true
         webVC.urlStr = noti.userInfo!["topic_url"] as? String
         
         let shopVC = ShopViewController()
+        shopVC.hidesBottomBarWhenPushed = true
+        shopVC.urlStr = noti.userInfo!["content_id"] as? String
         
-        let url = "http://mobile.iliangcang.com/goods/goodsList?a=b&list_id=$&count=10&page=1&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
-        shopVC.urlStr = url.stringByReplacingOccurrencesOfString("$", withString: (noti.userInfo!["content_id"] as? String)!)
-        
-        print(noti.userInfo)
         if (noti.userInfo!["topic_url"]?.length != 0) {
             
-            print("fei")
             self.navigationController?.pushViewController(webVC, animated: true)
             
         }else {
             
-            print("kong")
             self.navigationController?.pushViewController(shopVC, animated: true)
             
         }
@@ -106,23 +98,19 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func ldClick(noti: NSNotification) {
         
         let webVC = WebViewController()
+        webVC.hidesBottomBarWhenPushed = true
         webVC.urlStr = noti.userInfo!["topic_url"] as? String
         
         let shopVC = ShopViewController()
+        shopVC.hidesBottomBarWhenPushed = true
+        shopVC.urlStr = noti.userInfo!["content_id"] as? String
         
-        
-        let url = "http://mobile.iliangcang.com/goods/goodsList?a=b&list_id=$&count=10&page=1&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
-        shopVC.urlStr = url.stringByReplacingOccurrencesOfString("$", withString: (noti.userInfo!["content_id"] as? String)!)
-        
-        print(noti.userInfo)
         if (noti.userInfo!["topic_url"]?.length != 0) {
             
-            print("fei")
             self.navigationController?.pushViewController(webVC, animated: true)
             
         }else {
             
-            print("kong")
             self.navigationController?.pushViewController(shopVC, animated: true)
             
         }
@@ -131,23 +119,19 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func left(noti: NSNotification) {
         
         let webVC = WebViewController()
+        webVC.hidesBottomBarWhenPushed = true
         webVC.urlStr = noti.userInfo!["topic_url"] as? String
         
         let shopVC = ShopViewController()
+        shopVC.hidesBottomBarWhenPushed = true
+        shopVC.urlStr = noti.userInfo!["content_id"] as? String
         
-        
-        let url = "http://mobile.iliangcang.com/goods/goodsList?a=b&list_id=$&count=10&page=1&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
-        shopVC.urlStr = url.stringByReplacingOccurrencesOfString("$", withString: (noti.userInfo!["content_id"] as? String)!)
-        
-        print(noti.userInfo)
         if (noti.userInfo!["topic_url"]?.length != 0) {
             
-            print("fei")
             self.navigationController?.pushViewController(webVC, animated: true)
             
         }else {
             
-            print("kong")
             self.navigationController?.pushViewController(shopVC, animated: true)
             
         }
@@ -157,23 +141,19 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func right(noti: NSNotification) {
         
         let webVC = WebViewController()
+        webVC.hidesBottomBarWhenPushed = true
         webVC.urlStr = noti.userInfo!["topic_url"] as? String
         
         let shopVC = ShopViewController()
+        shopVC.hidesBottomBarWhenPushed = true
+        shopVC.urlStr = noti.userInfo!["content_id"] as? String
         
-        
-        let url = "http://mobile.iliangcang.com/goods/goodsList?a=b&list_id=$&count=10&page=1&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
-        shopVC.urlStr = url.stringByReplacingOccurrencesOfString("$", withString: (noti.userInfo!["content_id"] as? String)!)
-        
-        print(noti.userInfo)
         if (noti.userInfo!["topic_url"]?.length != 0) {
             
-            print("fei")
             self.navigationController?.pushViewController(webVC, animated: true)
             
         }else {
             
-            print("kong")
             self.navigationController?.pushViewController(shopVC, animated: true)
             
         }
@@ -193,14 +173,14 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "search"), style: .Plain, target: self, action: "add")
         
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "che"), style: .Plain, target: self, action: "lanzi")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: "che"), style: .Plain, target: self, action: "shopping")
         self.navigationItem.title = "商店"
     }
     func add() {
         
         
     }
-    func lanzi() {
+    func shopping() {
         
         
     }
@@ -291,10 +271,8 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             weak var weakSelf = self
             cell.initClosure({ (str) -> Void? in
                 
-//                let url = "http://mobile.iliangcang.com/goods/goodsShare?a=b&page=1&count=10&coverId=1&cat_code=$&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
-                
                 let common = CommonViewController()
-//                common.urlStr = url.stringByReplacingOccurrencesOfString("$", withString: str)
+
                 common.urlStr = str
                 common.hidesBottomBarWhenPushed = true
                 weakSelf!.navigationController?.pushViewController(common, animated: true)
@@ -308,17 +286,50 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
             return cell
         }else if indexPath.item == 2 {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("hCell", forIndexPath: indexPath) as! HomeCollectionViewCell
-            cell.myClosure = { (content_id: String) -> Void in
+            cell.initMyClosure({ (content_id) -> Void in
                 
                 let shopVC = ShopViewController()
-                let url = "http://mobile.iliangcang.com/goods/goodsList?a=b&list_id=$&count=10&page=1&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
-                shopVC.urlStr = url.stringByReplacingOccurrencesOfString("$", withString: content_id)
+                shopVC.urlStr = content_id
+                shopVC.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(shopVC, animated: true)
-            }
+            })
+            
+            cell.initSDCClosure({ (slide_id, content_type) -> Void in
+                
+                let webVC = WebViewController()
+                webVC.hidesBottomBarWhenPushed = true
+                webVC.urlStr = content_type
+                
+                let shopVC = SDCDetailViewController()
+                shopVC.hidesBottomBarWhenPushed = true
+                shopVC.urlStr = slide_id
+                
+                if (content_type != "") {
+                    
+                    self.navigationController?.pushViewController(webVC, animated: true)
+                    
+                }else {
+                    
+                    self.navigationController?.pushViewController(shopVC, animated: true)
+                    
+                }
+                
+                
+            })
+            
+            
             return cell
         }else if indexPath.item == 3 {
             
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("sCell", forIndexPath: indexPath) as! SubjectCollectionViewCell
+            cell.initMyClosure({ (str) -> Void? in
+                
+                let web = WebViewController()
+                web.title = "粮仓清单"
+                web.urlStr = str
+                self.navigationController?.pushViewController(web, animated: true)
+                return nil
+            })
             
             return cell
             

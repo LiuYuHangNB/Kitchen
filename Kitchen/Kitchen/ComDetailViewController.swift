@@ -32,8 +32,45 @@ class ComDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
         back.setBackgroundImage(UIImage(named: "bac"), forState: .Normal)
         self.view.addSubview(back)
         back.addTarget(self, action: "back", forControlEvents: .TouchUpInside)
+        
+        let aView = UIView.init(frame: CGRectMake(0, SCREENHEIGTH - 50 * HEIGTH, 40 * WIDTH, 50 * HEIGTH))
+        aView.backgroundColor = UIColor(red: 31/255.0, green: 80/255.0, blue: 128/255.0, alpha: 1.0)
+        self.view.addSubview(aView)
+        
+        let chatButton = UIButton.init(type: .System)
+        chatButton.frame = CGRectMake(0, 0, 30, 30)
+        chatButton.center = aView.center
+        chatButton.setBackgroundImage(UIImage(named:"kefu"), forState: .Normal)
+        chatButton.backgroundColor = UIColor(red: 31/255.0, green: 80/255.0, blue: 128/255.0, alpha: 1.0)
+        self.view.addSubview(chatButton)
+        chatButton.addTarget(self, action: "chat", forControlEvents: .TouchUpInside)
+        
+        
+        let left = UIButton(type: .System)
+        left.frame = CGRectMake(40 * WIDTH, SCREENHEIGTH - 50 * HEIGTH, (SCREENWIDTH - 40 * WIDTH) / 2, 50 * HEIGTH)
+        left.setTitle("加入购物车", forState: .Normal)
+        left.backgroundColor = UIColor(red: 31/255.0, green: 80/255.0, blue: 128/255.0, alpha: 0.8)
+        left.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        self.view.addSubview(left)
+        
+        
+        let right = UIButton(type: .System)
+        right.frame = CGRectMake(40 * WIDTH + (SCREENWIDTH - 40 * WIDTH) / 2, SCREENHEIGTH - 50 * HEIGTH, (SCREENWIDTH - 40 * WIDTH) / 2, 50 * HEIGTH)
+        right.setTitle("立即购买", forState: .Normal)
+        right.backgroundColor = UIColor(red: 31/255.0, green: 80/255.0, blue: 128/255.0, alpha: 0.5)
+        right.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        self.view.addSubview(right)
+        
+        left.addTarget(self, action: "add", forControlEvents: .TouchUpInside)
+        right.addTarget(self, action: "buy", forControlEvents: .TouchUpInside)
 
     }
+    
+    func chat() {
+        
+        
+    }
+    
     
     func back() {
         self.navigationController?.popViewControllerAnimated(true)
@@ -88,7 +125,7 @@ class ComDetailViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func initTableView() {
         
-        self.tableView = UITableView.init(frame: CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGTH), style: .Plain)
+        self.tableView = UITableView.init(frame: CGRectMake(0, 0, SCREENWIDTH, SCREENHEIGTH - 50 * HEIGTH), style: .Plain)
         self.tableView?.backgroundColor = UIColor.blackColor()
         self.tableView?.delegate = self
         self.tableView?.dataSource = self

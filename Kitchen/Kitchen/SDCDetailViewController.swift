@@ -1,14 +1,15 @@
 //
-//  CommonViewController.swift
+//  SDCDetailViewController.swift
 //  Kitchen
 //
-//  Created by 刘宇航 on 16/6/17.
+//  Created by 刘宇航 on 16/6/28.
 //  Copyright © 2016年 刘宇航. All rights reserved.
 //
 
 import UIKit
 
-class CommonViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
+class SDCDetailViewController: UIViewController,
+UICollectionViewDelegate,UICollectionViewDataSource,UITableViewDelegate,UITableViewDataSource {
     var urlStr: String?
     var modelArray: NSMutableArray?
     var collectionView: UICollectionView?
@@ -34,7 +35,7 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
         self.downRefresh()
         self.upRefresh()
     }
-
+    
     func initNavi() {
         
         self.view.backgroundColor = UIColor.blackColor()
@@ -98,17 +99,17 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-       
+        
         
         self.headLabel?.text = "     " +  (self.priceArray![indexPath.row] as? String)!
-   
+        
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             
             self.tableView?.frame = CGRectMake(0, 48 * HEIGTH, SCREENWIDTH, 0 * HEIGTH)
             
         })
         self.collectionView?.mj_header.endRefreshing()
-
+        
         if indexPath.row == 0{
             
             self.initTableData("", max: "")
@@ -118,27 +119,27 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
             
             self.initTableData("0", max: "200")
             self.collectionView?.mj_header.beginRefreshing()
-
+            
         }else if indexPath.row == 2 {
             
             self.initTableData("201", max: "500")
             self.collectionView?.mj_header.beginRefreshing()
-
+            
         }else if indexPath.row == 3 {
-
+            
             self.initTableData("501", max: "1000")
             self.collectionView?.mj_header.beginRefreshing()
-
+            
         }else if indexPath.row == 4 {
-
+            
             self.initTableData("1001", max: "3000")
             self.collectionView?.mj_header.beginRefreshing()
-
+            
         }else {
-
+            
             self.initTableData("3000", max: "")
             self.collectionView?.mj_header.beginRefreshing()
-
+            
         }
     }
     
@@ -157,7 +158,7 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
             
         }else {
             
-//            self.tableView?.hidden = true
+            //            self.tableView?.hidden = true
             UIView.animateWithDuration(0.5, animations: { () -> Void in
                 
                 self.tableView?.frame = CGRectMake(0, 48 * HEIGTH, SCREENWIDTH, 0 * HEIGTH)
@@ -173,12 +174,11 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
         manager.responseSerializer = AFJSONResponseSerializer()
         manager.responseSerializer.acceptableContentTypes = ["application/json", "text/json", "text/javascript","text/html","text/css","text/plain", "application/javascript"]
         
-        var url = "http://mobile.iliangcang.com/goods/goodsShare?a=b&page=*&count=10&coverId=1&cat_code=$&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975"
+        var url = "http://mobile.iliangcang.com/goods/goodsList?a=b&page=*&uid=1000002404&count=10&list_id=$&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975&user_token=a0f54064e2031a1fecaca7cc9713e0e1"
         url = url.stringByReplacingOccurrencesOfString("$", withString: urlStr!)
         let page: String = "\(self.page)"
         url = url.stringByReplacingOccurrencesOfString("*", withString: page)
         
-
         print(url)
         
         manager.GET(url, parameters: nil, progress: { (downloadProgress: NSProgress) -> Void in
@@ -191,13 +191,13 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
                 }
                 
                 self.has_more = (responseObject!["data"]as! NSDictionary)["has_more"] as? Bool
-              
+                
                 let array: NSArray = (responseObject!["data"]as! NSDictionary)["items"] as! NSArray
                 
                 for dic in array {
                     
                     let model = commonModel()
-                
+                    
                     model.setValuesForKeysWithDictionary(dic as! [String : AnyObject])
                     
                     self.modelArray?.addObject(model)
@@ -219,7 +219,7 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
     }
     
     func initTableData(min: String,max:String) {
-    
+        
         self.min = min
         self.max = max
         SVProgressHUD.showWithStatus("数据加载中...")
@@ -228,7 +228,7 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
         manager.responseSerializer = AFJSONResponseSerializer()
         manager.responseSerializer.acceptableContentTypes = ["application/json", "text/json", "text/javascript","text/html","text/css","text/plain", "application/javascript"]
         
-        var url = "http://mobile.iliangcang.com/goods/goodsShare?a=b&uid=1000002404&min=<&orderby=price&count=10&max=>&page=*&cat_code=$&coverId=1&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975&user_token=a0f54064e2031a1fecaca7cc9713e0e1"
+        var url = "http://mobile.iliangcang.com/goods/goodsList?a=b&page=*&min=<&uid=1000002404&max=>&count=10&list_id=$&app_key=iPhone&v=3.0.0&sig=97E9576F-B96F-48FD-BE0E-CD84610BC975&user_token=a0f54064e2031a1fecaca7cc9713e0e1"
         url = url.stringByReplacingOccurrencesOfString("$", withString: urlStr!)
         let page: String = "\(self.page)"
         url = url.stringByReplacingOccurrencesOfString("*", withString: page)
@@ -262,7 +262,7 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
                 self.collectionView?.reloadData()
                 self.collectionView?.mj_header.endRefreshing()
                 self.collectionView?.mj_footer.endRefreshing()
-
+                
                 if self.has_more == false {
                     
                     self.collectionView?.mj_footer.endRefreshingWithNoMoreData()
@@ -273,7 +273,7 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
                 
         }
     }
-
+    
     func initCollectionView() {
         
         let flowlayout = UICollectionViewFlowLayout()
@@ -330,20 +330,20 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
         
     }
     func upRefresh() {
-    
+        
         collectionView?.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: { () -> Void in
             
             self.isUploading = true
             self.page = self.page + 1
             if self.headLabel?.text == "     价格筛选" {
                 self.initData()
-
+                
             }else {
                 
                 self.initTableData(self.min!, max: self.max!)
             }
         })
-            
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -351,15 +351,15 @@ class CommonViewController: UIViewController,UICollectionViewDelegate,UICollecti
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
