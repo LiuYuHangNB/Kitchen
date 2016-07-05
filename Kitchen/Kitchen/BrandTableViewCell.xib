@@ -17,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSQ-Cy-I0Y" userLabel="line">
-                        <rect key="frame" x="8" y="106" width="352" height="1"/>
+                        <rect key="frame" x="8" y="106" width="342" height="1"/>
                         <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Igg-Q2-Xg5"/>
@@ -47,7 +47,7 @@
                     <constraint firstItem="ykd-Gh-rAE" firstAttribute="leading" secondItem="X0N-w5-907" secondAttribute="trailing" constant="15" id="jMy-Fa-zUe"/>
                     <constraint firstAttribute="topMargin" secondItem="X0N-w5-907" secondAttribute="top" id="m9m-59-CBu"/>
                     <constraint firstAttribute="bottomMargin" secondItem="WSQ-Cy-I0Y" secondAttribute="bottom" constant="-9" id="mIO-ik-eGr"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="WSQ-Cy-I0Y" secondAttribute="trailing" constant="-40" id="riF-Z4-Ymb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="WSQ-Cy-I0Y" secondAttribute="trailing" constant="-30" id="riF-Z4-Ymb"/>
                     <constraint firstItem="X0N-w5-907" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="rn1-9N-keH"/>
                 </constraints>
             </tableViewCellContentView>
@@ -55,7 +55,7 @@
                 <outlet property="imgView" destination="X0N-w5-907" id="jMg-UI-JbP"/>
                 <outlet property="titleLabel" destination="ykd-Gh-rAE" id="YDU-Uu-O7g"/>
             </connections>
-            <point key="canvasLocation" x="246" y="212.5"/>
+            <point key="canvasLocation" x="68" y="209.5"/>
         </tableViewCell>
     </objects>
 </document>

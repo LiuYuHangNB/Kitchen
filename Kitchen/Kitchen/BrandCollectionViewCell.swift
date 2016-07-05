@@ -39,13 +39,11 @@ class BrandCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITableV
         
         let page = "\(self.page)"
         url = url.stringByReplacingOccurrencesOfString("$", withString: page)
-        print(url)
         manager.GET(url, parameters: nil, progress: { (downloadProgress: NSProgress) -> Void in
             
             }, success: { (task: NSURLSessionDataTask,
                 responseObject: AnyObject?) -> Void in
                 
-                print(responseObject)
                 self.has_more = (responseObject?.objectForKey("data") as! NSDictionary).objectForKey("has_more") as? Bool
                 
                 if self.isUploading == false {
@@ -72,7 +70,6 @@ class BrandCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITableV
                 
                 
             }) { (task: NSURLSessionDataTask?, error: NSError) -> Void in
-                
                 
         }
 
@@ -135,16 +132,12 @@ class BrandCollectionViewCell: UICollectionViewCell,UITableViewDelegate,UITableV
             
             self.isUploading = true
             self.page = self.page! + 1
-            
             self.initData()
-            
             
         })
         
     }
 
-   
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

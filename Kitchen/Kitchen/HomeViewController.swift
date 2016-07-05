@@ -188,7 +188,7 @@ class HomeViewController: UIViewController,UICollectionViewDelegate,UICollection
     func initButtons() {
         
         buttonsArray = NSMutableArray()
-        titlesArray = ["分类","品牌","首页","专题","品牌"]
+        titlesArray = ["分类","品牌","首页","专题","礼物"]
         
         for var i = 0;i<titlesArray.count;i++ {
             
