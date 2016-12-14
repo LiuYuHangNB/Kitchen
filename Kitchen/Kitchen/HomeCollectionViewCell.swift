@@ -43,7 +43,7 @@ class HomeCollectionViewCell: UICollectionViewCell,SDCycleScrollViewDelegate,UIT
     
     func initSDCData() {
     
-        SVProgressHUD.showWithStatus("数据加载中...")
+        SVProgressHUD.showWithStatus("数据加载中s...")
         SVProgressHUD.setDefaultStyle(.Dark)
         SDCArray = NSMutableArray()
         modelArray = NSMutableArray()
